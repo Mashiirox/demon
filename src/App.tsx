@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Button, Modal } from 'antd';
 
+import ElementInput from './components/element-input/element-input';
+
 import './App.less';
 
 function App() {
@@ -13,9 +15,13 @@ function App() {
         onOk={() => setShow(false)}
         onCancel={() => setShow(false)}
       >
-        <div className='form-username m-16'>
-          <input type='text' placeholder='用户名' className='form-username-input' />
-          <label className='form-username-label text-gray-400'>用户名</label>
+        <div className='m-12'>
+          <ElementInput title='用户名' className='mb-4' />
+          <div className='flex'>
+            <ElementInput title='密码' className='w-full mr-2' />
+            <ElementInput title='确认密码' className='w-full ml-2' />
+          </div>
+          <ElementInput title='邮箱' className='mt-4' />
         </div>
       </Modal>
     </div>
