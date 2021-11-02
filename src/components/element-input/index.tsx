@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import cs from 'classnames';
 
-import './element-input.less';
+import './index.less';
 
 interface Props {
   title: string;
@@ -9,7 +9,7 @@ interface Props {
   validate?: boolean;
 }
 
-function ElementInput({ title, className, validate = false }: Props) {
+function ElementInput({ title, className, validate = false }: Props): JSX.Element {
   const labelRef = useRef(null);
   return (
     <div className={cs('form-element w-full', className)}>
@@ -27,7 +27,7 @@ function ElementInput({ title, className, validate = false }: Props) {
           'form-element-label-validate': validate,
         })}
         // @ts-ignore
-        onClick={() => {labelRef.current?.focus();}}
+        onClick={() => { labelRef.current?.focus(); }}
       >
         {title}
       </label>

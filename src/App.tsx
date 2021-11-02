@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Button, Modal } from 'antd';
 
-import ElementInput from './components/element-input/element-input';
+import ElementInput from './components/element-input';
 
 import './App.less';
 
-function App() {
+function App(): JSX.Element {
   const [show, setShow] = useState(false);
   return (
     <div className='flex justify-center'>
