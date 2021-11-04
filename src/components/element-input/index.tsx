@@ -3,17 +3,20 @@ import cs from 'classnames';
 
 import './index.less';
 
-interface Props {
+type Props = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> & {
   title: string;
   className?: string;
   validate?: boolean;
 }
 
-function ElementInput({ title, className, validate = false }: Props): JSX.Element {
+function ElementInput(props: Props): JSX.Element {
+  const { title, className, validate = false } = props;
   const labelRef = useRef(null);
+  const inputProps = { ...props, className: '' };
   return (
     <div className={cs('form-element w-full', className)}>
       <input
+        {...inputProps}
         type='text'
         placeholder={title}
         id='element-input'

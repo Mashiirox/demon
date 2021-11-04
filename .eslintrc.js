@@ -7,7 +7,6 @@ module.exports = {
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:react/jsx-runtime",
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -23,8 +22,7 @@ module.exports = {
         "unused-imports",
     ],
     "rules": {
-        "react/jsx-uses-react": "error",
-        "react/jsx-uses-vars": "error",
+        'react/react-in-jsx-scope': 'off',
         '@typescript-eslint/ban-ts-comment': 'warn',
         '@typescript-eslint/camelcase': 'off',
         '@typescript-eslint/explicit-function-return-type': ['warn', {
@@ -45,9 +43,10 @@ module.exports = {
         "@typescript-eslint/no-invalid-this": ["error"],
         '@typescript-eslint/no-unused-vars': ['warn', { varsIgnorePattern: '_' }],
         '@typescript-eslint/no-empty-function': ['warn'],
-        camelcase: 'off',
+        'camelcase': 'off',
         'arrow-parens': ['error', 'always'],
-        indent: ['error', 2],
+        "indent": "off",
+        "@typescript-eslint/indent": ["error", 2],
         // https://github.com/typescript-eslint/typescript-eslint/issues/1824
         // '@typescript-eslint/indent': ['error', 2],
         'max-len': [
@@ -71,8 +70,8 @@ module.exports = {
         'no-plusplus': 'error',
         'object-curly-spacing': ['warn', 'always'],
         'quote-props': ['error', 'as-needed'],
-        quotes: ['error', 'single'],
-        radix: [1, 'as-needed'],
+        'quotes': ['error', 'single'],
+        'radix': [1, 'as-needed'],
         'react/display-name': 'off',
         'react/jsx-wrap-multilines': [
             'warn',
@@ -128,7 +127,7 @@ module.exports = {
             },
         ],
         'require-jsdoc': 'off',
-        semi: ['error', 'always'],
+        'semi': ['error', 'always'],
         'space-infix-ops': ['error', { int32Hint: false }],
         'unused-imports/no-unused-imports': 'error',
         'unused-imports/no-unused-vars': [
@@ -140,7 +139,7 @@ module.exports = {
                 varsIgnorePattern: '^_',
             },
         ],
-        eqeqeq: ['error', 'always'],
+        'eqeqeq': ['error', 'always'],
     },
     "settings": {
         "react": {
