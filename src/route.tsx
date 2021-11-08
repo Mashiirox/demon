@@ -11,7 +11,6 @@ export default (
   <Suspense fallback={() => { }}>
     <Switch>
       <Route exact path='/' component={FrontPage} />
-      <Route exact path='/frontpage' component={FrontPage} />
       <Route exact path='/tag' component={TagPage} />
       <Route exact path='/article/:id' component={ArticlePage} />
     </Switch>

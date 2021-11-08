@@ -23,7 +23,10 @@ function FrontPage(): JSX.Element {
 
   if (isLoading) {
     return (
-      <div>正在加载</div>
+      // <div>正在加载</div>
+      <div className='flex justify-center items-center'>
+        <img src='https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/blog/loading.gif' />
+      </div>
     );
   }
 

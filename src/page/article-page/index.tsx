@@ -7,6 +7,7 @@ import { getIssueByNumber } from '../api';
 
 function ArticlePage(): JSX.Element {
   const [content, setContent] = useState('');
+  const [showLoading, setShowLoading] = useState(false);
   const { id } = useParams<{ id: string }>();
 
   const { data, isLoading, isError } = useQuery(['GET_ISSUE_BY_NUMBER', id], () => getIssueByNumber(id), {
@@ -17,8 +18,14 @@ function ArticlePage(): JSX.Element {
   useEffect(() => setContent(data?.body), [data]);
 
   if (isLoading) {
+    setTimeout(() => setShowLoading(true), 500);
+  }
+
+  if (isLoading && showLoading) {
     return (
-      <div>加载哦！</div>
+      <div className='flex justify-center items-center'>
+        <img src='https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/blog/loading.gif' />
+      </div>
     );
   }
 
