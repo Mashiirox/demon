@@ -13,8 +13,8 @@ function App(): JSX.Element {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <div className='the-whole-bg' />
-        <div>
-          <Header />
+        <Header />
+        <div className='page'>
           {routers}
         </div>
       </BrowserRouter>

@@ -5,6 +5,8 @@ import { useQuery } from 'react-query';
 
 import { getIssueByNumber } from '../api';
 
+import './index.less';
+
 function ArticlePage(): JSX.Element {
   const [content, setContent] = useState('');
   const [showLoading, setShowLoading] = useState(false);
@@ -36,9 +38,11 @@ function ArticlePage(): JSX.Element {
   }
 
   return (
-    <ReactMarkdown>
-      {content}
-    </ReactMarkdown>
+    <div className='articlepage bg-white'>
+      <ReactMarkdown>
+        {content}
+      </ReactMarkdown>
+    </div>
   );
 }
 
